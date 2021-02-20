@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Lista de Alunos</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+	rel="stylesheet" />
+</head>
+<body>
+	<h1>Formação Java!</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Aluno</th>
+				<th>E-mail</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="aluno: ${alunos}">
+				<td th:text="${aluno.nome}"></td>
+				<td th:text="${aluno.email}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
